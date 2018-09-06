@@ -1,10 +1,11 @@
 # Chaos-agent
 # What is it?
 sorry for my english..
-a plugin for SCP: Secret Laboratory,thanks Squalalah his scp181 Gave me inspiration.
+
+This is a plugin for SCP: Secret Laboratory,thanks Squalalah his scp181 give me inspiration.
 # plugin content
-one Class-D will became Chaos agent,agent looks like Class-D,but he has more health an item when game start.
-when agent escaped, Chaos Insurgency will reward this agent,he will beacme chaos soldier with more HP and item,
+one Class-D will became Chaos agent when game start,agent looks like Class-D,but he has more health an item.
+when agent escaped, Chaos Insurgency will reward this agent,he will beacme chaos soldier with more HP and item.
 # How do I use it?
 download the dll from https://github.com/cushaw1/Chaos-agent/releases/tag/1.0.3 and put it in the folder titled sm_plugins.
 you shuold make online_mode: true,because it use steamid
