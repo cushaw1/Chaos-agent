@@ -10,7 +10,7 @@ When the Chaos Agent escapes, the Chaos Insurgency will reward the agent, he wil
 # How do I use it?
 Download the dll from https://github.com/cushaw1/Chaos-agent/releases/tag/1.0.3 
 Put it in the folder titled sm_plugins.
-You shuold set `online_mode: true` ,because it use steamID
+You should set `online_mode: true` ,because it use steamID
 >PS: Some small grammar errors i dont know how to fix
 # Config Options
 Config Option | Value Type | Default Value | Description
