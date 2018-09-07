@@ -8,7 +8,8 @@ one Class-D will became Chaos agent when game start,agent looks like Class-D,but
 when agent escaped, Chaos Insurgency will reward this agent,he will beacme chaos soldier with more HP and item.
 # How do I use it?
 download the dll from https://github.com/cushaw1/Chaos-agent/releases/tag/1.0.3 and put it in the folder titled sm_plugins.
-you shuold make online_mode: true,because it use steamid
+you shuold make online_mode: true,because it use steamID
+PS: some small grammar errors i dont know how to fix
 # Config Options
 Config Option | Value Type | Default Value | Description
 --- | :---: | :---: | ---
