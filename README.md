@@ -10,7 +10,7 @@ when agent escaped, Chaos Insurgency will reward this agent,he will beacme chaos
 download the dll from https://github.com/cushaw1/Chaos-agent/releases/tag/1.0.4 and put it in the folder titled sm_plugins.
 you shuold make online_mode: true,because it use steamID
 
-PS: plugin maybe have some small grammar errors
+PS: plugin maybe have some small grammar errors,
 if you use DefaultItem plugin,reward maybe not work
 # Config Options
 Config Option | Value Type | Default Value | Description
