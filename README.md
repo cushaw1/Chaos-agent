@@ -7,10 +7,10 @@ This is a plugin for SCP: Secret Laboratory,thanks Squalalah his scp181 give me 
 one Class-D will became Chaos agent when game start,agent looks like Class-D,but he has more health and item.
 when agent escaped, Chaos Insurgency will reward this agent,he will beacme chaos soldier with more HP and item.
 # How do I use it?
-download the dll from https://github.com/cushaw1/Chaos-agent/releases/tag/1.0.3 and put it in the folder titled sm_plugins.
+download the dll from https://github.com/cushaw1/Chaos-agent/releases/tag/1.0.4 and put it in the folder titled sm_plugins.
 you shuold make online_mode: true,because it use steamID
-PS: some small grammar errors i dont know how to fix
-if you use DefaultItem plugin,reward maybe not work,i wlll fix later
+PS: plugin maybe have some small grammar errors
+if you use DefaultItem plugin,reward maybe not work
 # Config Options
 Config Option | Value Type | Default Value | Description
 --- | :---: | :---: | ---
