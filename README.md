@@ -11,7 +11,7 @@ download the dll from https://github.com/cushaw1/Chaos-agent/releases/tag/1.0.4 
 you shuold make online_mode: true,because it use steamID
 
 PS: plugin maybe have some small grammar errors,
-if you use DefaultItem plugin,reward maybe not work
+if you use DefaultItem plugin,reward item maybe not work
 # Config Options
 Config Option | Value Type | Default Value | Description
 --- | :---: | :---: | ---
