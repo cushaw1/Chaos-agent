@@ -2,21 +2,21 @@ using Smod2;
 using Smod2.Events;
 using Smod2.API;
 using Smod2.EventHandlers;
+using Smod2.Commands;
 using System.Collections.Generic;
 
 
-namespace Chaos_agent_plugin
+namespace Chaos_agent
 {
-    class EventHandler : IEventHandlerRoundStart, IEventHandlerRoundEnd, IEventHandlerPlayerDie, IEventHandlerSetRole
+    class EventHandler : IEventHandlerRoundStart, IEventHandlerRoundEnd,  IEventHandlerPlayerDie,  IEventHandlerSetRole
     {
         private Plugin plugin;
-        public string Chaosid;
+        public Player Chaos;
         private List<Player> players;
         public int heal = 200;
-        public int[] item = { 0, 27 };
-        public int[] reward = { 16, 25 };
-        private int minimum_chaos = 3;
-        private int minimum_players = 10;
+        public int[] item;
+        public int[] reward;
+        private int minimum_chaos = 1;
         private bool enabled = true;
 
         public EventHandler(Plugin plugin)
@@ -24,73 +24,74 @@ namespace Chaos_agent_plugin
             this.plugin = plugin;
             players = new List<Player>();
         }
-        public void OnRoundStart(RoundStartEvent ev)
+      public void OnRoundStart(RoundStartEvent ev)
         {
             players = ev.Server.GetPlayers();
             enabled = plugin.GetConfigBool("chaos_agent_enable");
-            if (enabled == true)
+            if (enabled)
             {
                 heal = plugin.GetConfigInt("chaos_agent_health");
-                minimum_chaos = plugin.GetConfigInt("chaos_agent_classd");
-                minimum_players = plugin.GetConfigInt("chaos_agent_player");
+                minimum_chaos = plugin.GetConfigInt("chaos_agent_number");
+
                 List<Player> list = new List<Player>();
-                if (players.Count == 0 || players.Count < minimum_players) plugin.Info("Not enough players to chaos agent");
+                if (players.Count == 0) plugin.Info("Not enough players to chaos agent");
                 else
                 {
                     foreach (Player p in players)
                     {
                         if (p.TeamRole.Role == Role.CLASSD) list.Add(p);
                     }
-                    if (list.Count < minimum_chaos) plugin.Info("Not enough ClassD to chaos agent");
+                    if (list.Count < minimum_chaos) plugin.Info("Not enough ClassD to spawn chaos agent");
                     else
                     {
                         int index = UnityEngine.Random.Range(0, list.Count);
-                        Chaosid = list[index].SteamId;
+                        Chaos = list[index];
+                        plugin.Info(Chaos.Name + " becomes chaos agent.");
+                        Chaos.SetHealth(heal, DamageType.NONE);
+
+                        foreach (int id in item)
+                        {
+                            Chaos.GiveItem((ItemType)id);
+                        }
                     }
                 }
                 list.Clear();
             }
-         }
+        }
         public void OnRoundEnd(RoundEndEvent ev)
         {
-                if (enabled == true)
+            if (enabled)
+            {
+                if (enabled)
                 {
                     players.Clear();
+                    Chaos = null;
                 }
+            }      
         }
         public void OnPlayerDie(PlayerDeathEvent ev)
         {
-            if (enabled == true)
+            if (enabled)
             {
-                if (ev.Player.SteamId == Chaosid)
-                players.Clear();
+                if (ev.Player.SteamId == Chaos.SteamId) Chaos = null;
             }
         }
         public void OnSetRole(PlayerSetRoleEvent ev)
         {
-            if (enabled == true)
+            if (enabled)
             {
-                if (ev.Player.SteamId == Chaosid && ev.TeamRole.Role == Role.CLASSD)
+                if (ev.Player.SteamId == Chaos.SteamId && ev.TeamRole.Role == Role.CHAOS_INSUGENCY)
                 {
-                    plugin.Info(ev.Player.Name + " is chaos agent.");
-                    int[] item = plugin.GetConfigIntList("chaos_agent_item");
                     foreach (int id in reward)
                     {
-                        ev.Player.GiveItem((ItemType)id);
+                        Chaos.GiveItem((ItemType)id);
                     }
-                    ev.Player.SetHealth(heal, DamageType.NONE);
-                }
-                if (ev.Player.SteamId == Chaosid && ev.TeamRole.Role == Role.CHAOS_INSUGENCY)
-                {
-                    int[] reward = plugin.GetConfigIntList("chaos_agent_reward");
-                    foreach (int id in reward)
-                    {
-                        ev.Player.GiveItem((ItemType)id);
-                    }
-                    ev.Player.SetHealth(heal, DamageType.NONE);
+                    Chaos.SetHealth(heal, DamageType.NONE);
                     players.Clear();
+                    Chaos = null;
                 }
             }
         }
     }
+
 }
