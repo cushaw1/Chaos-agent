@@ -22,7 +22,7 @@ if you use DefaultItem plugin,reward item maybe not work
 # Config Options
 Config Option | Value Type | Default Value | Description
 --- | :---: | :---: | ---
-chaos_agent_enable | Boolean | True | open Chaos agent plugin
+chaos_agent_enable | Boolean | True | Chaos agent plugin enable/disable
 chaos_agent_classd | Integer | 3 | Chaos Agent will present at least Class-D players number
 chaos_agent_player | Integer | 10 | Chaos Agent will present at least all players number
 chaos_agent_health | Integer | 200 | Chaos Agent HP 
