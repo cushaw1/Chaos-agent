@@ -90,6 +90,7 @@ namespace Chaos_agent_plugin
                     ev.Player.SetHealth(heal, DamageType.NONE);
                     Chaosid = null;
                     players.Clear();
+                    System.Threading.Thread.Sleep(1000);
                     foreach (int id in reward)
                     {
                         ev.Player.GiveItem((ItemType)id);
