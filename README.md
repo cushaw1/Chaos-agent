@@ -17,8 +17,7 @@ put it in the folder titled sm_plugins.
 
 you shuold set online_mode: true,because it use steamID
 
-PS: plugin maybe have some small grammar errors,
-if you use DefaultItem plugin,reward item maybe not work
+PS: plugin maybe have some small grammar errors
 # Config Options
 Config Option | Value Type | Default Value | Description
 --- | :---: | :---: | ---
