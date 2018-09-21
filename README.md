@@ -11,7 +11,7 @@ The agent looks like a Class-D, but he has more health and items.
 When the Chaos Agent escapes, the Chaos Insurgency will reward the agent, he will become a Chaos Insurgent with more HP and items.
 
 # How do I use it?
-download the dll from https://github.com/cushaw1/Chaos-agent/releases/tag/1.0.4
+download the dll from https://github.com/cushaw1/Chaos-agent/releases/tag/1.0.5
 
 put it in the folder titled sm_plugins.
 
