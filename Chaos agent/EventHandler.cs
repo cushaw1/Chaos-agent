@@ -92,7 +92,7 @@ namespace Chaos_agent_plugin
                     players.Clear();
                     foreach (int id in reward)
                     {
-                        ev.Player.GiveItem((ItemType)id);
+                        ev.Items.Add((ItemType)id);
                     }
                 }
             }
